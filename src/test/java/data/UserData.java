@@ -35,5 +35,8 @@ public class UserData {
     public static PayInfo getPayInfo() {
         return new PayInfo("5000");
     }
+    public static PayInfo getOverPayInfo() {
+        return new PayInfo("15000");
+    }
 
 }

@@ -22,6 +22,7 @@ public class MoneyTransferTest {
         var verificationCode = UserData.getVerificationCode(authInfo);
         verificationPage.validVerify(verificationCode);
         DashboardPage.transferMoneyOnFirstCard(UserData.getPayInfo());
+        DashboardPage.getFirstCardBalance();
         $(withText("15000")).should(appear);
     }
 
@@ -32,7 +33,19 @@ public class MoneyTransferTest {
         var verificationPage = loginPage.validLogin(authInfo);
         var verificationCode = UserData.getVerificationCode(authInfo);
         verificationPage.validVerify(verificationCode);
-        DashboardPage.transferMoneyOnFirstCard(UserData.getPayInfo());
-        $(withText("15000")).should(appear);
+        DashboardPage.transferMoneyOnLastCard(UserData.getPayInfo());
+        DashboardPage.getLastCardBalance();
+        $(withText("10000")).should(appear);
+    }
+
+    @Test
+    void shouldTransferMoneyIfOverLimit() {
+        var loginPage =new LoginPage();
+        var authInfo = UserData.getAuthInfo();
+        var verificationPage = loginPage.validLogin(authInfo);
+        var verificationCode = UserData.getVerificationCode(authInfo);
+        verificationPage.validVerify(verificationCode);
+        DashboardPage.transferMoneyOnFirstCard(UserData.getOverPayInfo());
+        $(withText("-5000")).should(appear);
     }
 }
