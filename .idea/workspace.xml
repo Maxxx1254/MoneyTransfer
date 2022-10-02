@@ -4,19 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aaa11873-ac7a-4e5b-aad1-a65fe3600f1d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.appveyor.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.appveyor.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="aaa11873-ac7a-4e5b-aad1-a65fe3600f1d" name="Changes" comment="делал правки в логике в дашборде">
+      <change afterPath="$PROJECT_DIR$/src/test/java/ru/netology/data/DataHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ru/netology/data/UserData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/MoneyTransferTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MoneyTransferTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/data/UserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/data/UserData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/DashboardPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/DashboardPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/MoneyTransferTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/data/UserData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/DashboardPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/VerificationPage.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -46,13 +50,37 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/orenb/IdeaProjects/Deadline",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.MoneyTransferTest">
+  <component name="RunManager" selected="Gradle.MoneyTransferTest.shouldTransferMoneyBetweenLastCards">
+    <configuration name="MoneyTransferTest (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ru.netology.MoneyTransferTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="MoneyTransferTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -67,6 +95,29 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;MoneyTransferTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="MoneyTransferTest.shouldTransferMoneyBetweenFirstCards (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ru.netology.MoneyTransferTest.shouldTransferMoneyBetweenFirstCards&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -112,53 +163,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;MoneyTransferTest.shouldTransferMoneyBetweenLastCards&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="MoneyTransferTest.shouldTransferMoneyBetweenOwnCards" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;MoneyTransferTest.shouldTransferMoneyBetweenOwnCards&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="MoneyTransferTest.shouldTransferMoneyIfOverLimit" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;MoneyTransferTest.shouldTransferMoneyIfOverLimit&quot;" />
+            <option value="&quot;ru.netology.MoneyTransferTest.shouldTransferMoneyBetweenLastCards&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -170,11 +175,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.MoneyTransferTest" />
-        <item itemvalue="Gradle.MoneyTransferTest.shouldTransferMoneyBetweenFirstCards" />
         <item itemvalue="Gradle.MoneyTransferTest.shouldTransferMoneyBetweenLastCards" />
-        <item itemvalue="Gradle.MoneyTransferTest.shouldTransferMoneyIfOverLimit" />
-        <item itemvalue="Gradle.MoneyTransferTest.shouldTransferMoneyBetweenOwnCards" />
+        <item itemvalue="Gradle.MoneyTransferTest.shouldTransferMoneyBetweenFirstCards (1)" />
+        <item itemvalue="Gradle.MoneyTransferTest (1)" />
+        <item itemvalue="Gradle.MoneyTransferTest.shouldTransferMoneyBetweenFirstCards" />
+        <item itemvalue="Gradle.MoneyTransferTest" />
       </list>
     </recent_temporary>
   </component>
@@ -187,6 +192,14 @@
       <option name="presentableId" value="Default" />
       <updated>1655902969301</updated>
     </task>
+    <task id="LOCAL-00001" summary="делал правки в логике в дашборде">
+      <created>1663677570532</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1663677570532</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -199,5 +212,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="делал правки в логике в дашборде" />
+    <option name="LAST_COMMIT_MESSAGE" value="делал правки в логике в дашборде" />
   </component>
 </project>

@@ -1,16 +1,15 @@
-package pages;
+package ru.netology.pages;
 
 import com.codeborne.selenide.SelenideElement;
-import data.UserData;
-import org.openqa.selenium.support.FindBy;
+import ru.netology.data.UserData;
 
 import static com.codeborne.selenide.Selenide.$;
 
 
 public class LoginPage {
-    private SelenideElement loginField = $("[name=\"login\"]");;
-    private SelenideElement passwordField = $("[name=\"password\"]");
-    private SelenideElement loginButton = $("[class=\"button__text\"]");
+    private final SelenideElement loginField = $("[name=\"login\"]");
+    private final SelenideElement passwordField = $("[name=\"password\"]");
+    private final SelenideElement loginButton = $("[class=\"button__text\"]");
 
     public VerificationPage validLogin(UserData.AuthInfo authInfo) {
         loginField.setValue(authInfo.getLogin());
