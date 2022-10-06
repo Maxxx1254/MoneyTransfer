@@ -2,7 +2,7 @@ package ru.netology;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import ru.netology.data.DataHelper;
+import ru.netology.data.UserData;
 import ru.netology.pages.DashboardPage;
 import ru.netology.pages.LoginPage;
 import ru.netology.pages.TransferPage;
@@ -13,44 +13,50 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class MoneyTransferTest {
 
     @BeforeEach
-    public void setup() {open("http://localhost:9999/");}
+    public void setup() {
+        open("http://localhost:9999/");
+    }
 
     @Test
     void shouldTransferMoneyBetweenFirstCards() {
-        var loginPage =new LoginPage();
-        var authInfo = DataHelper.getAuthInfo();
+        var loginPage = new LoginPage();
+        var authInfo = UserData.getAuthInfo();
         var verificationPage = loginPage.validLogin(authInfo);
-        var verificationCode = DataHelper.getVerificationCode();
+        var verificationCode = UserData.getVerificationCode();
         verificationPage.validVerify(verificationCode);
         var dashboardPage = new DashboardPage();
-        int expected = dashboardPage.finishBalanceFirstCard();
-        dashboardPage.transferMoneyOnFirstCard(DataHelper.getAmount());
-        assertEquals( expected , dashboardPage.getFirstCardBalance());
+        int expected = dashboardPage.getFirstCardBalance() + Integer.parseInt(UserData.getAmount().getAmount());
+        dashboardPage.transferMoneyOnFirstCard(UserData.getAmount());
+        var transferPage = new TransferPage();
+        transferPage.getTransferMoneyOnFirstCard(UserData.getAmount());
+        assertEquals(expected, dashboardPage.getFirstCardBalance());
     }
 
     @Test
     void shouldTransferMoneyBetweenLastCards() {
-        var loginPage =new LoginPage();
-        var authInfo = DataHelper.getAuthInfo();
+        var loginPage = new LoginPage();
+        var authInfo = UserData.getAuthInfo();
         var verificationPage = loginPage.validLogin(authInfo);
-        var verificationCode = DataHelper.getVerificationCode();
+        var verificationCode = UserData.getVerificationCode();
         verificationPage.validVerify(verificationCode);
         var dashboardPage = new DashboardPage();
-        int expected = dashboardPage.finishBalanceLastCard();
-        dashboardPage.transferMoneyOnLastCard(DataHelper.getAmount());
+        int expected = dashboardPage.getLastCardBalance() + Integer.parseInt(UserData.getAmount().getAmount());
+        dashboardPage.transferMoneyOnLastCard(UserData.getAmount());
+        var transferPage = new TransferPage();
+        transferPage.getTransferMoneyOnLastCard(UserData.getAmount());
         assertEquals(expected, dashboardPage.getLastCardBalance());
     }
 
     @Test
     void shouldTransferMoneyIfOverLimit() {
-        var loginPage =new LoginPage();
-        var authInfo = DataHelper.getAuthInfo();
+        var loginPage = new LoginPage();
+        var authInfo = UserData.getAuthInfo();
         var verificationPage = loginPage.validLogin(authInfo);
-        var verificationCode = DataHelper.getVerificationCode();
+        var verificationCode = UserData.getVerificationCode();
         verificationPage.validVerify(verificationCode);
         var dashboardPage = new DashboardPage();
-        dashboardPage.transferMoneyOnLastCardUpLimit(DataHelper.getAmount());
+        dashboardPage.transferMoneyOnLastCard(UserData.getAmount());
         var transferPage = new TransferPage();
-        assertEquals("Операция невозможна! На карте не достаточно средств.", transferPage.error());
+        transferPage.getTransferMoneyOnLastCardUpLimit(UserData.getAmount());
     }
 }

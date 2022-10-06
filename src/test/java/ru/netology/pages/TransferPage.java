@@ -2,9 +2,9 @@ package ru.netology.pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import ru.netology.data.DataHelper;
 import ru.netology.data.UserData;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 
 public class TransferPage {
@@ -16,24 +16,25 @@ public class TransferPage {
 
     public void getTransferMoneyOnFirstCard(UserData.Amount amount) {
         pay.setValue(amount.getAmount());
-        numberCard.setValue(DataHelper.getPayInfo().getCardLast());
+        numberCard.setValue(UserData.getPayInfo().getCardLast());
         button.click();
     }
+
     public void getTransferMoneyOnLastCard(UserData.Amount amount) {
         pay.setValue(amount.getAmount());
-        numberCard.setValue(DataHelper.getPayInfo().getCardFirst());
+        numberCard.setValue(UserData.getPayInfo().getCardFirst());
         button.click();
+        new DashboardPage();
     }
 
     public void getTransferMoneyOnLastCardUpLimit(UserData.Amount amount) {
         pay.setValue(amount.getOverAmount());
-        numberCard.setValue(DataHelper.getPayInfo().getCardFirst());
+        numberCard.setValue(UserData.getPayInfo().getCardLast());
         button.click();
         error();
     }
 
-    public String error () {
-        errorNotification.should(Condition.visible);
-        return "Операция невозможна! На карте не достаточно средств.";
+    public void error() {
+        errorNotification.should(Condition.visible).should(text("Операция невозможна! На карте не достаточно средств."));
     }
 }
