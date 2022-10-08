@@ -34,15 +34,15 @@ public class DashboardPage {
         return Integer.parseInt(value);
     }
 
-    public void transferMoneyOnFirstCard(UserData.Amount amount) {
+    public TransferPage transferMoneyOnFirstCard(UserData.Amount amount) {
         heading.should(visible);
         popolnit.first().click();
-        new TransferPage();
+        return new TransferPage();
     }
 
-    public void transferMoneyOnLastCard(UserData.Amount amount) {
+    public TransferPage transferMoneyOnLastCard(UserData.Amount amount) {
         heading.should(visible);
         popolnit.last().click();
-        new TransferPage();
+        return new TransferPage();
     }
 }

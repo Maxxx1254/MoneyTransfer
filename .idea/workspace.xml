@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aaa11873-ac7a-4e5b-aad1-a65fe3600f1d" name="Changes" comment="внес 5 правок">
+    <list default="true" id="aaa11873-ac7a-4e5b-aad1-a65fe3600f1d" name="Changes" comment="правки без 7 и 9 пунктов">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/MoneyTransferTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/MoneyTransferTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/data/DataHelper.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/data/UserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/data/UserData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/pages/DashboardPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/pages/DashboardPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/pages/TransferPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/pages/TransferPage.java" afterDir="false" />
@@ -175,9 +174,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.MoneyTransferTest.shouldTransferMoneyBetweenFirstCards (1)" />
+        <item itemvalue="Gradle.MoneyTransferTest (1)" />
         <item itemvalue="Gradle.MoneyTransferTest.shouldTransferMoneyBetweenLastCards" />
         <item itemvalue="Gradle.MoneyTransferTest.shouldTransferMoneyIfOverLimit" />
-        <item itemvalue="Gradle.MoneyTransferTest (1)" />
         <item itemvalue="Gradle.MoneyTransferTest.shouldTransferMoneyBetweenFirstCards" />
       </list>
     </recent_temporary>
@@ -205,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664746194753</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="правки без 7 и 9 пунктов">
+      <created>1665059119292</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1665059119292</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -222,6 +228,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="делал правки в логике в дашборде" />
     <MESSAGE value="внес 5 правок" />
-    <option name="LAST_COMMIT_MESSAGE" value="внес 5 правок" />
+    <MESSAGE value="правки без 7 и 9 пунктов" />
+    <option name="LAST_COMMIT_MESSAGE" value="правки без 7 и 9 пунктов" />
   </component>
 </project>

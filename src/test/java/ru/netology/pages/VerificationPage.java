@@ -11,10 +11,10 @@ public class VerificationPage {
     private final SelenideElement code = $("[name='code']");
     private final SelenideElement verifyButton = $("[data-test-id=action-verify]");
 
-    public void validVerify(UserData.VerificationCode verificationCode) {
+    public DashboardPage validVerify(UserData.VerificationCode verificationCode) {
         code.shouldBe(visible);
         code.setValue(verificationCode.getCode());
         verifyButton.click();
-        new DashboardPage();
+        return new DashboardPage();
     }
 }

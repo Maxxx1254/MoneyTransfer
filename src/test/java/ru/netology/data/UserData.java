@@ -8,15 +8,12 @@ import lombok.Value;
 @Data
 public class UserData {
     @Value
-    public static class PayInfo {
-        String cardFirst;
-        String cardLast;
-        String idFirstCard;
-        String idLastCard;
+    public static class CardNumber {
+        String cardNumber;
     }
 
     @Value
-    public  static class Amount {
+    public static class Amount {
         String amount;
         String overAmount;
     }
@@ -43,7 +40,4 @@ public class UserData {
     public static UserData.Amount getAmount() {
         return new UserData.Amount("5000", "15000");
     }
-
-    public static UserData.PayInfo getPayInfo() {
-        return new UserData.PayInfo("5559 0000 0000 0001", "5559 0000 0000 0002", "92df3f1c-a033-48e6-8390-206f6b1f56c0", "0f3f5c2a-249e-4c3d-8287-09f7a039391d");}
 }
