@@ -7,9 +7,11 @@ import lombok.Value;
 @AllArgsConstructor
 @Data
 public class UserData {
+
     @Value
     public static class CardNumber {
-        String cardNumber;
+        String cardNumberFirst;
+        String cardNumberLast;
     }
 
     @Value
@@ -37,7 +39,7 @@ public class UserData {
         return new VerificationCode("12345");
     }
 
-    public static UserData.Amount getAmount() {
-        return new UserData.Amount("5000", "15000");
+    public static CardNumber getCardNumber() {
+        return new CardNumber("5559 0000 0000 0001", "5559 0000 0000 0002");
     }
 }

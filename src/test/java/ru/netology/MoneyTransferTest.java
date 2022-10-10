@@ -1,7 +1,5 @@
 package ru.netology;
 
-import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.netology.data.UserData;
@@ -10,7 +8,7 @@ import ru.netology.pages.LoginPage;
 import ru.netology.pages.TransferPage;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$x;
 import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
@@ -21,8 +19,6 @@ public class MoneyTransferTest {
         open("http://localhost:9999/");
     }
 
-    private final SelenideElement errorNotification = $("[data-test-id=error-notification]");
-
     @Test
     void shouldTransferMoneyBetweenFirstCards() {
         var loginPage = new LoginPage();
@@ -31,11 +27,11 @@ public class MoneyTransferTest {
         var verificationCode = UserData.getVerificationCode();
         verificationPage.validVerify(verificationCode);
         var dashboardPage = new DashboardPage();
-        int expected = dashboardPage.getFirstCardBalance() + Integer.parseInt(UserData.getAmount().getAmount());
-        int expected2 = dashboardPage.getLastCardBalance() - Integer.parseInt(UserData.getAmount().getAmount());
-        dashboardPage.transferMoneyOnFirstCard(UserData.getAmount());
+        int expected = dashboardPage.getFirstCardBalance() + Integer.parseInt("5000");
+        int expected2 = dashboardPage.getLastCardBalance() - Integer.parseInt("5000");
+        dashboardPage.transferMoneyOnFirstCard("5000");
         var transferPage = new TransferPage();
-        transferPage.getTransferMoneyOnCard(UserData.getAmount().getAmount(), "5559 0000 0000 0002");
+        transferPage.getTransferMoneyOnCard("5000", UserData.getCardNumber().getCardNumberLast());
         assertArrayEquals(new int[]{expected, expected2}, new int[]{dashboardPage.getFirstCardBalance(), dashboardPage.getLastCardBalance()});
     }
 
@@ -47,11 +43,11 @@ public class MoneyTransferTest {
         var verificationCode = UserData.getVerificationCode();
         verificationPage.validVerify(verificationCode);
         var dashboardPage = new DashboardPage();
-        int expected = dashboardPage.getLastCardBalance() + Integer.parseInt(UserData.getAmount().getAmount());
-        int expected2 = dashboardPage.getFirstCardBalance() - Integer.parseInt(UserData.getAmount().getAmount());
-        dashboardPage.transferMoneyOnLastCard(UserData.getAmount());
+        int expected = dashboardPage.getLastCardBalance() + Integer.parseInt("5000");
+        int expected2 = dashboardPage.getFirstCardBalance() - Integer.parseInt("5000");
+        dashboardPage.transferMoneyOnLastCard("5000");
         var transferPage = new TransferPage();
-        transferPage.getTransferMoneyOnCard(UserData.getAmount().getAmount(), "5559 0000 0000 0001");
+        transferPage.getTransferMoneyOnCard("5000", UserData.getCardNumber().getCardNumberFirst());
         assertArrayEquals(new int[]{expected, expected2}, new int[]{dashboardPage.getFirstCardBalance(), dashboardPage.getLastCardBalance()});
     }
 
@@ -63,9 +59,9 @@ public class MoneyTransferTest {
         var verificationCode = UserData.getVerificationCode();
         verificationPage.validVerify(verificationCode);
         var dashboardPage = new DashboardPage();
-        dashboardPage.transferMoneyOnLastCard(UserData.getAmount());
+        dashboardPage.transferMoneyOnLastCard("15000");
         var transferPage = new TransferPage();
-        transferPage.getTransferMoneyOnCard(UserData.getAmount().getOverAmount(), "5559 0000 0000 0001");
-        errorNotification.should(Condition.visible).should(text("Операция невозможна! На карте не достаточно средств."));
+        transferPage.getTransferMoneyOnCard("15000", UserData.getCardNumber().getCardNumberLast());
+        $x(".//div[@class='money-input__currency']").should(text("Операция невозможна! На карте не достаточно средств."));
     }
 }

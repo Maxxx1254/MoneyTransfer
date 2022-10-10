@@ -3,7 +3,6 @@ package ru.netology.pages;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import lombok.val;
-import ru.netology.data.UserData;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.withText;
@@ -34,13 +33,13 @@ public class DashboardPage {
         return Integer.parseInt(value);
     }
 
-    public TransferPage transferMoneyOnFirstCard(UserData.Amount amount) {
+    public TransferPage transferMoneyOnFirstCard(String amount) {
         heading.should(visible);
         popolnit.first().click();
         return new TransferPage();
     }
 
-    public TransferPage transferMoneyOnLastCard(UserData.Amount amount) {
+    public TransferPage transferMoneyOnLastCard(String amount) {
         heading.should(visible);
         popolnit.last().click();
         return new TransferPage();
