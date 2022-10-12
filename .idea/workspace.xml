@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aaa11873-ac7a-4e5b-aad1-a65fe3600f1d" name="Changes" comment="правки c 7 и 9 пунктами">
+    <list default="true" id="aaa11873-ac7a-4e5b-aad1-a65fe3600f1d" name="Changes" comment="убрал суммы добавил карты, поменял метод сравнения">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/MoneyTransferTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/MoneyTransferTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/data/UserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/data/UserData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/pages/DashboardPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/pages/DashboardPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/pages/TransferPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/pages/TransferPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,7 +215,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665227983195</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="убрал суммы добавил карты, поменял метод сравнения">
+      <created>1665400242599</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1665400242600</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -235,6 +241,7 @@
     <MESSAGE value="внес 5 правок" />
     <MESSAGE value="правки без 7 и 9 пунктов" />
     <MESSAGE value="правки c 7 и 9 пунктами" />
-    <option name="LAST_COMMIT_MESSAGE" value="правки c 7 и 9 пунктами" />
+    <MESSAGE value="убрал суммы добавил карты, поменял метод сравнения" />
+    <option name="LAST_COMMIT_MESSAGE" value="убрал суммы добавил карты, поменял метод сравнения" />
   </component>
 </project>

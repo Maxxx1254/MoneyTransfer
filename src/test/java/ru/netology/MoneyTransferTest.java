@@ -7,10 +7,9 @@ import ru.netology.pages.DashboardPage;
 import ru.netology.pages.LoginPage;
 import ru.netology.pages.TransferPage;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.$x;
 import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MoneyTransferTest {
 
@@ -62,6 +61,7 @@ public class MoneyTransferTest {
         dashboardPage.transferMoneyOnLastCard("15000");
         var transferPage = new TransferPage();
         transferPage.getTransferMoneyOnCard("15000", UserData.getCardNumber().getCardNumberLast());
-        $x(".//div[@class='money-input__currency']").should(text("Операция невозможна! На карте не достаточно средств."));
+        String expected = "Операция невозможна! На карте не достаточно средств.";
+        assertEquals(expected, transferPage.Error());
     }
 }
